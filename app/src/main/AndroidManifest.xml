@@ -14,20 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AssurePayroll_Employee">
-        <activity
-            android:name=".success"
-            android:label="Success" />
+        <activity android:name=".attendance"></activity>
+        <activity android:name=".Success" />
+        <activity android:name=".display_leaves" />
         <activity
             android:name=".display_payslips"
             android:label="Payslips" />
-        <activity
-            android:name=".attendance"
-            android:label="Attendance" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".login"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AssurePayroll_Employee.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

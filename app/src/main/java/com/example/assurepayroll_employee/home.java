@@ -16,7 +16,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class home extends Fragment implements View.OnClickListener {
-    CardView c2,c3;
+    CardView c1,c2,c3;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -62,8 +62,10 @@ public class home extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root= inflater.inflate(R.layout.fragment_home, container, false);
+        c1=(CardView)root.findViewById(R.id.leave_card);
         c2=(CardView)root.findViewById(R.id.attendance_card);
         c3=(CardView)root.findViewById(R.id.payslip_card);
+        c1.setOnClickListener((View.OnClickListener) this);
         c2.setOnClickListener((View.OnClickListener) this);
         c3.setOnClickListener((View.OnClickListener) this);
         return root;
@@ -80,6 +82,11 @@ public class home extends Fragment implements View.OnClickListener {
 
             case R.id.payslip_card:
                 i=new Intent(getActivity(),display_payslips.class);
+                startActivity(i);
+                break;
+
+            case R.id.leave_card:
+                i=new Intent(getActivity(),display_leaves.class);
                 startActivity(i);
                 break;
 

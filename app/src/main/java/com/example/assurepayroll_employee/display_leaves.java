@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class display_payslips extends AppCompatActivity {
+public class display_leaves extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_payslips);
+        setContentView(R.layout.activity_display_leaves);
     }
 }
