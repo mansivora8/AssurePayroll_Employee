@@ -1,12 +1,27 @@
 package com.example.assurepayroll_employee;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +29,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class logout extends Fragment {
-
+    View view;
+    String URL="http://192.168.0.157:80/SDP_Payroll/logout.php";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +75,43 @@ public class logout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logout, container, false);
+        view= inflater.inflate(R.layout.fragment_logout, container, false);
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
+        {
+            // stringRequest.setRetryPolicy(new DefaultRetryPolicy(5000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+            @Override
+            public void onResponse(String response){
+
+                Intent intent = new Intent(getActivity(),login.class);
+                startActivity(intent);
+
+
+            }
+        },new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> data=new HashMap<String, String>();
+                //  data.put("eid",eid);
+
+
+               // Log.d(TAG, data.toString());
+
+                return  data;
+            }
+        };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                10000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
+        RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    return view;
     }
 }

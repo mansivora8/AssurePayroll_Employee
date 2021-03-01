@@ -27,8 +27,8 @@ import java.util.Map;
 public class login extends AppCompatActivity {
     private EditText etEid,etPassword;
     private String eid,password;
-   // private String URL="http://192.168.0.157:80/SDP_Payroll/login.php"; //maitri's URL
-   private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
+    private String URL="http://192.168.0.157:80/SDP_Payroll/login.php"; //maitri's URL
+  // private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
     //EditText etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +79,7 @@ public class login extends AppCompatActivity {
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+                  // Toast.makeText(login.this, response.toString(), Toast.LENGTH_SHORT).show();
                     if (response.equals("admin")) {
 
                         Intent intent = new Intent(login.this, MainActivity.class);
@@ -91,7 +92,7 @@ public class login extends AppCompatActivity {
                     }
                     else
                     {
-                        Intent intent = new Intent(login.this, MainActivity.class);
+                       Intent intent = new Intent(login.this, MainActivity.class);
                         startActivity(intent);
                         Toast.makeText(login.this, "Employee login successful", Toast.LENGTH_SHORT).show();
                         finish();
