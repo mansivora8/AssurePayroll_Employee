@@ -45,7 +45,8 @@ EditText etdate,etreason,etleaveType;
 TextView tvstatus;
 Button btnConfirm;
 
-String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";
+//String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";
+String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
 
 String date,reason,leave_type,status;
 Spinner sp_leave;
