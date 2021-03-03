@@ -2,7 +2,9 @@ package com.example.assurepayroll_employee;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -28,8 +30,11 @@ public class login extends AppCompatActivity {
     private EditText etEid,etPassword;
     private String eid,password;
     TextView tv;
-   // private String URL="http://192.168.0.157:80/SDP_Payroll/login.php"; //maitri's URL
-   private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
+   // SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
+    public static final String empId = "session_empId";
+    private String URL="http://192.168.0.157:80/SDP_Payroll/login.php"; //maitri's URL
+  // private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
     //EditText etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,9 +98,14 @@ public class login extends AppCompatActivity {
                     }
                     else
                     {
+                        //session
+                        SessionManagement sessionManagement=new SessionManagement(login.this);
+                        sessionManagement.saveSession(eid);
+
+                        //move
                        Intent intent = new Intent(login.this, MainActivity.class);
                         startActivity(intent);
-                        Toast.makeText(login.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this,"Login successful", Toast.LENGTH_SHORT).show();
                         finish();
                     }
 

@@ -1,6 +1,10 @@
 package com.example.assurepayroll_employee;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -33,6 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static android.content.ContentValues.TAG;
+import static com.example.assurepayroll_employee.login.MyPREFERENCES;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,9 +49,9 @@ View view;
 EditText etdate,etreason,etleaveType;
 TextView tvstatus;
 Button btnConfirm;
-
-//String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";
-String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
+    SharedPreferences sharedpreferences;
+String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";//maitri's url
+//String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
 
 String date,reason,leave_type,status;
 Spinner sp_leave;
@@ -97,6 +102,9 @@ ArrayAdapter<String> arrayAdapter_leave;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        SessionManagement sessionManagement=new SessionManagement(this.getActivity());
+        String empId=sessionManagement.getSession();
+
         view= inflater.inflate(R.layout.fragment_leave, container, false);
         sp_leave=(Spinner)view.findViewById(R.id.leave_type);
         arrayList_leave=new ArrayList<>();
@@ -144,6 +152,7 @@ ArrayAdapter<String> arrayAdapter_leave;
                 leave_type=sp_leave.getSelectedItem().toString();
                 status = tvstatus.getText().toString().trim();
 
+
                 if (date.isEmpty()) {
                     etdate.setError("Date is required");
                     etdate.requestFocus();
@@ -157,14 +166,27 @@ ArrayAdapter<String> arrayAdapter_leave;
                 {
                     Log.i(TAG, "All data are inserted");
                     StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                        @SuppressLint("WrongConstant")
                         @Override
                         public void onResponse(String response) {
                             Log.d(TAG, response);
-                            tvstatus.setText(response.toString());
+                            if (response.equals("success")) {
+                                Toast.makeText(getActivity(), "Leave request has been sent", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                startActivity(intent);
+
+
+                            }
+
+                           // tvstatus.setText(response.toString());
+
+
+
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+
                             Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
                         }
                     }){
@@ -174,6 +196,7 @@ ArrayAdapter<String> arrayAdapter_leave;
                             data.put("date",date);
                             data.put("reason",reason);
                             data.put("leave_type",leave_type);
+                            data.put("empId",empId);
                             Log.d(TAG, data.toString());
                             return data;
                         }

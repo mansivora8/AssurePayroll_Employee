@@ -76,7 +76,7 @@ public class logout extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_logout, container, false);
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
+      /*  StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
         {
             // stringRequest.setRetryPolicy(new DefaultRetryPolicy(5000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
@@ -109,9 +109,15 @@ public class logout extends Fragment {
                 10000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-        ));
-        RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
-        requestQueue.add(stringRequest);
+        ));*/
+       // RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
+        //requestQueue.add(stringRequest);
+        SessionManagement sessionManagement=new SessionManagement(this.getActivity());
+        sessionManagement.removeSession();
+        Intent intent = new Intent(getActivity(),login.class);
+        startActivity(intent);
+        Toast.makeText(getActivity(),"You are logged out",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(logout.this, "You have logged out", Toast.LENGTH_SHORT).show();
     return view;
     }
 }
