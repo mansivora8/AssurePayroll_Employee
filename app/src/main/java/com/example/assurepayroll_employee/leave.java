@@ -50,8 +50,8 @@ EditText etdate,etreason,etleaveType;
 TextView tvstatus;
 Button btnConfirm;
     SharedPreferences sharedpreferences;
-//String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";//maitri's url
-String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
+String URL="http://192.168.0.157:80/SDP_Payroll/request_leave.php";//maitri's url
+//String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
 
 String date,reason,leave_type,status;
 Spinner sp_leave;
@@ -172,7 +172,7 @@ ArrayAdapter<String> arrayAdapter_leave;
                             Log.d(TAG, response);
                             if (response.equals("success")) {
                                 Toast.makeText(getActivity(), "Leave request has been sent", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getActivity(), MainActivity.class);
+                                Intent intent = new Intent(getActivity(), display_leaves.class);
                                 startActivity(intent);
 
 
