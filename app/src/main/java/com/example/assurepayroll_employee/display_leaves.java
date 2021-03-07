@@ -24,8 +24,8 @@ import java.util.Map;
 
 public class display_leaves extends AppCompatActivity {
 TextView tfull,thalf,tsick,tv;
-    //String URL="http://192.168.0.157:80/SDP_Payroll/display_leaves.php";
-    String URL="http://192.168.43.231:80/SDP_Payroll/display_leaves.php";
+    String URL="http://192.168.43.195:80/SDP_Payroll/display_leaves.php";//maitri
+    //String URL="http://192.168.43.231:80/SDP_Payroll/display_leaves.php";
    // String full,half,sick;
     static final String TAG = "Register";
     @Override
