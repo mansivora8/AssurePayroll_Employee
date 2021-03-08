@@ -117,18 +117,6 @@
             android:layout_marginLeft="5dp"
             android:textSize="18dp"
             android:text="Leave" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/holiday"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:textSize="18dp"
-            android:text="Holiday" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
