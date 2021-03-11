@@ -82,7 +82,7 @@ public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewhol
         holder.status.setText(status);
         if(status.equals("Grant") || status.equals("Approved"))
         {
-            holder.status.setBackgroundColor(Color.GREEN);
+            holder.status.setBackgroundColor(Color.parseColor("#228b22"));
         }
         else if(status.equals("Deny") || status.equals("Denied"))
         {

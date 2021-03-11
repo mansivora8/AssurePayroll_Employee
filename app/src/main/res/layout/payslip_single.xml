@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".display_payslips">
+    tools:context=".payslip_single">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,18 +14,13 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="Payslips"
+            app:title="Payslip Details"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.AssurePayroll_Employee.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
-    <fragment
-        android:id="@+id/payslip_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_payslip"
-        android:name="com.example.assurepayroll_employee.payslip"
-        android:layout_marginTop="58dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

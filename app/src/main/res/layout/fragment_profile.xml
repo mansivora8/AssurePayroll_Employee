@@ -194,7 +194,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Employee"
+                android:text="Update"
                 android:layout_marginTop="30dp"
 
                 android:background="@color/lightblue"

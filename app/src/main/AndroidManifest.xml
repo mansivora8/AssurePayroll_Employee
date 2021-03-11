@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssurePayroll_Employee">
         <activity android:name=".attendance"></activity>
-        <activity android:name=".Success" />
+        <activity android:name=".payslip_single" />
         <activity android:name=".display_leaves" />
         <activity
             android:name=".display_payslips"

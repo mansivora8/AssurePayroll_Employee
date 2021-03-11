@@ -37,7 +37,8 @@ import java.util.Map;
  * create an instance of this fragment.
  */
 public class recycler_leave extends Fragment {
-    String URL="http://192.168.43.195:80/SDP_Payroll/display_leavesList_employee.php";
+    //String URL="http://192.168.43.195:80/SDP_Payroll/display_leavesList_employee.php";
+    String URL="http://192.168.43.231:80/SDP_Payroll/display_leavesList_employee.php";
     static final String TAG = "Register";
 
     List<LeavesData> leavesDataList;
