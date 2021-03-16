@@ -23,14 +23,12 @@ public class PayslipAdapter extends RecyclerView.Adapter<PayslipAdapter.payslipv
 
     @Override
     public void onBindViewHolder(@NonNull payslipviewholder holder, int position) {
-        String name=data[position];
+        /*String name=data[position];
         holder.name.setText(name);
         String date=data[position];
         holder.date.setText(date);
-        String time=data[position];
-        holder.time.setText(time);
         String amount=data[position];
-        holder.amount.setText(amount);
+        holder.amount.setText(amount);*/
     }
 
     @Override
@@ -42,10 +40,9 @@ public class PayslipAdapter extends RecyclerView.Adapter<PayslipAdapter.payslipv
         TextView name,date,time,amount;
         public payslipviewholder(@NonNull View itemView) {
             super(itemView);
-            name=(TextView) itemView.findViewById(R.id.name);
+            /*name=(TextView) itemView.findViewById(R.id.name);
             date=(TextView) itemView.findViewById(R.id.date);
-            time=(TextView) itemView.findViewById(R.id.time);
-            amount=(TextView) itemView.findViewById(R.id.amount);
+            amount=(TextView) itemView.findViewById(R.id.amount);*/
         }
     }
 

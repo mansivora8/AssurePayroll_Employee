@@ -34,17 +34,6 @@
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="141dp" />
-        <TextView
-            android:id="@+id/time"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="11:00 AM"
-            android:textColor="@color/grey"
-            android:textSize="18dp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="141dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
