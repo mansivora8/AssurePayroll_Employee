@@ -26,26 +26,37 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/lightblue"
-        android:ems="10"
-        android:hint="Choose Month"
-        android:inputType="date"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.093" />
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/lightblue"
+            android:ems="10"
+            android:hint="Choose Month"
+            android:inputType="date"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+            app:layout_constraintVertical_bias="0.093" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:src="@drawable/ic_search"/>
+
+    </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Attendance Summary"
             android:textColor="@color/lightblue"
             android:textStyle="bold"
@@ -54,5 +65,10 @@
             android:textSize="20dp"/>
         <GridView
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:columnWidth="100dp"
+            android:minHeight="100dp"
+            android:stretchMode="columnWidth"
+            android:id="@+id/attendance_gridview"/>
 </GridLayout>

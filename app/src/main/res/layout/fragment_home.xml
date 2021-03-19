@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mark Attendance"
+                        android:text="View Attendance"
                         android:textSize="15dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
@@ -103,7 +103,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Payslips of employees"
+                        android:text="Payslip Details"
                         android:textSize="15dp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
