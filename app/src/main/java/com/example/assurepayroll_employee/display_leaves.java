@@ -46,20 +46,23 @@ TextView tfull,thalf,tsick,tv;
                 Log.d(TAG, response);
                 //tv.setText(response.toString());
                 String JSON_STRING=response.toString();
-                String f,h,s;
+                Integer f,h,s;
                 try {
                     // get JSONObject from JSON file
                     JSONObject obj = new JSONObject(JSON_STRING);
                     // fetch JSONObject named leave
                     JSONObject leave = obj.getJSONObject("leave");
                     // get employee name and salary
-                    f = leave.getString("full");
-                    h = leave.getString("half");
-                    s = leave.getString("sick");
+                    f = Integer.parseInt(leave.getString("full")) ;
+                    h = Integer.parseInt(leave.getString("half"));
+                    s = Integer.parseInt(leave.getString("sick"));
+                    Integer full=24-f;
+                    Integer half=12-h;
+                    Integer sick=6-s;
 
-                    tfull.setText(f);
-                    thalf.setText(h);
-                    tsick.setText(s);
+                    tfull.setText(full.toString());
+                    thalf.setText(half.toString());
+                    tsick.setText(sick.toString());
 
 
 
