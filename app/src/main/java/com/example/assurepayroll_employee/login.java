@@ -33,8 +33,8 @@ public class login extends AppCompatActivity {
    // SharedPreferences sharedpreferences;
     public static final String MyPREFERENCES = "MyPrefs";
     public static final String empId = "session_empId";
-//    private String URL="http://192.168.43.195:80/SDP_Payroll/login.php"; //maitri's URL
- private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
+    private String URL="http://192.168.29.195:80/SDP_Payroll/login.php"; //maitri's URL
+// private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
     //EditText etPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

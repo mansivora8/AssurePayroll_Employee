@@ -50,8 +50,8 @@ EditText etdate,etreason,etleaveType;
 TextView tvstatus;
 Button btnConfirm;
     SharedPreferences sharedpreferences;
-//String URL="http://192.168.43.195:80/SDP_Payroll/request_leave.php";//maitri's url
-String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
+String URL="http://192.168.29.195:80/SDP_Payroll/request_leave.php";//maitri's url
+//String URL="http://192.168.43.231:80/SDP_Payroll/request_leave.php";
 
 String date,reason,leave_type,status;
 Spinner sp_leave;
