@@ -39,7 +39,7 @@
                 android:textSize="18dp" />
 
             <EditText
-                android:id="@+id/ename"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -60,12 +60,13 @@
                 android:textSize="18dp" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/email_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 android:backgroundTint="@color/lightblue"
+                android:gravity="center"
                 android:layout_marginBottom="20dp"/>
 
             <com.google.android.material.textview.MaterialTextView
@@ -86,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:gravity="center"
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
                 android:inputType="phone"/>
@@ -108,6 +110,7 @@
                 android:ems="10"
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
+                android:gravity="center"
                 android:inputType="date"/>
 
             <!--     <com.google.android.material.textview.MaterialTextView
@@ -148,7 +151,7 @@
                   android:backgroundTint="@color/lightblue"
                   android:layout_marginBottom="20dp"
                   android:inputType="text"/>-->
-            <LinearLayout
+          <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -171,28 +174,10 @@
                     android:layout_weight="1"
                     android:ems="10"
                     />
-                <!-- <EditText
-                     android:id="@+id/city"
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
-                     android:layout_weight="1"
-                     android:hint="City"
-                     android:textColorHint="@color/lightblue"
-                     android:ems="10"
-                     android:inputType="text"/>
-                 <EditText
-                     android:id="@+id/state"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_marginLeft="5dp"
-                     android:layout_weight="1"
-                     android:hint="State"
-                     android:textColorHint="@color/lightblue"
-                     android:ems="10"
-                     android:inputType="text"/>-->
-            </LinearLayout>
+
+            </LinearLayout>-->
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Update"
